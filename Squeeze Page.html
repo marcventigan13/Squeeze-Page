@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Client Name] — Free Personalized Health Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --red:#C41E1E;
+  --red-dark:#8B1515;
+  --red-light:#FEF2F2;
+  --off-white:#F8F6F1;
+  --warm-white:#FFFFFF;
+  --charcoal:#1E1C18;
+  --ink:#2E2C28;
+  --mid:#706D66;
+  --light:#E8E5DF;
+  --lighter:#F2EFE9;
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--ink);line-height:1.7;font-size:18px;}
+
+.display{font-family:'Cormorant Garamond',serif;font-weight:700;line-height:1.15;}
+.display em{font-style:italic;color:var(--red);}
+
+.container{max-width:1060px;margin:0 auto;padding:0 32px;}
+
+/* NAV */
+nav{background:var(--charcoal);padding:20px 0;}
+nav .inner{display:flex;align-items:center;justify-content:center;max-width:1060px;margin:0 auto;padding:0 32px;}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;color:#fff;letter-spacing:-.01em;text-align:center;}
+.logo span{color:var(--red);}
+
+/* HERO */
+.hero{background:var(--charcoal);padding:64px 0 56px;text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(196,30,30,.12),transparent);pointer-events:none;}
+.hero h1{font-size:clamp(36px,5.5vw,60px);color:#fff;max-width:700px;margin:0 auto 16px;}
+.hero-sub{font-size:20px;color:#fff;max-width:520px;margin:0 auto 0;font-weight:300;font-style:italic;line-height:1.7;}
+
+/* MAIN SECTION */
+.main-section{background:var(--warm-white);padding:0;border-bottom:1px solid var(--light);}
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border:1px solid var(--light);}
+
+/* BENEFITS COL */
+.benefits-col{padding:40px 36px;border-right:1px solid var(--light);}
+.benefits-head{font-size:clamp(20px,2.2vw,26px);font-weight:600;color:var(--ink);margin-bottom:24px;line-height:1.4;}
+.benefits-head span{color:var(--red);}
+.bullet-list{display:flex;flex-direction:column;gap:16px;}
+.bullet-item{display:flex;gap:14px;align-items:flex-start;}
+.bullet-check{width:24px;height:24px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;flex-shrink:0;margin-top:3px;}
+.bullet-text{font-size:17px;color:var(--ink);font-weight:400;line-height:1.6;}
+
+/* FORM COL */
+.form-col{padding:40px 36px;background:var(--warm-white);}
+.form-card{height:100%;}
+.form-card-header{margin-bottom:24px;}
+.form-card-header h3{font-size:clamp(20px,2.2vw,26px);font-weight:600;color:var(--ink);line-height:1.35;text-align:center;}
+.form-card-body{}
+.form-group{margin-bottom:16px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+label{display:block;font-size:13px;font-weight:500;color:var(--mid);margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase;}
+input{width:100%;background:var(--lighter);border:1px solid var(--light);border-radius:3px;padding:14px 16px;font-family:'Outfit',sans-serif;font-size:16px;color:var(--ink);outline:none;transition:border .2s;}
+input::placeholder{color:var(--mid);}
+input:focus{border-color:var(--red);}
+.btn-submit{display:block;width:100%;background:var(--red);color:#fff;border:none;padding:18px;border-radius:3px;font-family:'Outfit',sans-serif;font-size:17px;font-weight:500;cursor:pointer;text-align:center;transition:background .2s,transform .15s;letter-spacing:.03em;margin-top:8px;}
+.btn-submit:hover{background:var(--red-dark);transform:translateY(-2px);}
+.form-note{font-size:13px;color:var(--mid);text-align:center;margin-top:12px;font-style:italic;}
+
+/* TESTIMONIALS */
+.testi-section{padding:64px 0;background:var(--off-white);}
+.testi-head{text-align:center;margin-bottom:36px;}
+.testi-head p{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:600;font-style:italic;color:var(--ink);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1060px;margin:0 auto;padding:0 32px;}
+.testi{background:var(--warm-white);border:1px solid var(--light);border-top:3px solid var(--red);border-radius:0 0 8px 8px;padding:24px;}
+.testi-stars{color:var(--red);font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.testi blockquote{font-size:16px;color:var(--mid);font-style:italic;font-weight:300;line-height:1.6;margin-bottom:14px;}
+.testi cite{font-size:15px;font-weight:500;color:var(--ink);font-style:normal;}
+.testi-placeholder{background:var(--lighter);border:1px dashed var(--light);border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:14px;font-style:italic;}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:28px 0;text-align:center;}
+footer p{font-size:13px;color:rgba(255,255,255,.4);font-weight:300;}
+footer strong{color:rgba(255,255,255,.7);font-weight:500;}
+
+@media(max-width:860px){
+  .main-grid{grid-template-columns:1fr;gap:36px;}
+  .testi-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <span class="logo">[Client <span>Name]</span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="display">Meet a Certified Trainer Today and Walk Out With Your <em>Free Personalized Health Plan</em></h1>
+    <p class="hero-sub">All you have to do is show up and we'll craft you a health plan that fits into your busy career</p>
+  </div>
+</section>
+
+<!-- MAIN: TWO COLUMN TABLE LAYOUT -->
+<section class="main-section">
+  <div class="container">
+    <div class="main-grid">
+
+      <!-- LEFT: BENEFITS -->
+      <div class="benefits-col">
+        <div class="benefits-head">Meet with fitness experts who've helped <span>hundreds of busy professionals</span> to…</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-check">✓</div>
+            <div class="bullet-text">Still have the energy at 3PM when everyone else starts to feel tired</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-check">✓</div>
+            <div class="bullet-text">Get through the hardest part of the day and still have something left for the part that actually matters</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-check">✓</div>
+            <div class="bullet-text">Have enough energy in the tank to play with the kids</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-check">✓</div>
+            <div class="bullet-text">Be the parent who can bond with their kids during the weekends</div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-check">✓</div>
+            <div class="bullet-text">Do all of these while still feeling sharp at that 5PM meeting</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="form-col">
+        <div class="form-card">
+          <div class="form-card-header">
+            <h3>Schedule your FREE Consultation to live life the way you want</h3>
+          </div>
+          <div class="form-card-body">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" placeholder="John">
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+1 (000) 000-0000">
+            </div>
+            <button class="btn-submit">Book My Free Consultation</button>
+            <p class="form-note">We respect your privacy. No spam, ever.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="testi-head">
+    <p>Meet the busy professionals who've been exactly where you are</p>
+  </div>
+  <div style="max-width:1060px;margin:0 auto 36px;padding:0 32px;">
+    <div style="width:100%;height:200px;background:var(--lighter);border:1px dashed var(--light);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:18px;font-style:italic;">[Testimonial Slideshow Image]</div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"After a long-term neck injury the tailored sessions were just what I needed. Less migraines, less tension. Money well spent."</blockquote>
+      <cite>Natalie L.</cite>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"I was already seeing and feeling results after the introductory sessions. It makes it easy to stay motivated."</blockquote>
+      <cite>Kathleen L.</cite>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"If you need help getting back on track, or if you need motivation to stay on track, this is an amazing place."</blockquote>
+      <cite>Ryan S.</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p><strong>[Client Name]</strong></p>
+    <p style="margin-top:6px;">[Phone Number] &nbsp;·&nbsp; [Location]</p>
+  </div>
+</footer>
+
+</body>
+</html>
